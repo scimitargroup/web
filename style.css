@@ -29,7 +29,7 @@
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; background: var(--bg); }
+html { scroll-behavior: smooth; background: var(--bg); overflow-x: hidden; }
 body { font-family: var(--font-body); background: transparent; color: var(--text); overflow-x: hidden; }
 
 /* ── ANTIGRAVITY BACKGROUND ── */
@@ -553,6 +553,8 @@ img {
   .hero-text { text-align:center; }
   .hero-sub { margin:0 auto 2rem; }
   .hero-btns { justify-content:center; }
+  .hero-card-img { height: 220px; }
+  .hero-card-wrap { animation: none; }
 
   .about-grid, .services-grid, .contact-grid { grid-template-columns:1fr; }
   .prod-grid, .infra-grid, .infra-layout, .ad-banner-grid { grid-template-columns:1fr; }
@@ -560,7 +562,80 @@ img {
   .form-row { grid-template-columns:1fr; }
   .ft-top { grid-template-columns:1fr; }
   .ft-bot { flex-direction:column; text-align:center; }
-  section { padding:3.5rem 1.5rem; }
-  footer { padding:3.5rem 1.5rem 1.5rem; }
+  section { padding:3rem 1.2rem; }
+  footer { padding:3rem 1.2rem 1.5rem; }
   .hero { padding-top:70px; }
+
+  /* Featured products container outside section */
+  .container { padding-left:1.2rem; padding-right:1.2rem; }
+
+  /* Ad banner overflow */
+  .ad-banner { padding: 2rem 1.2rem; margin: 3rem 0 1.5rem; border-radius: 14px; }
+  .flagship-card { padding: 1.5rem 1.2rem; border-radius: 14px; }
+  .flagship-card h3 { font-size: 1.25rem; }
+  .flagship-img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem; }
+
+  /* Category grid: 2 cols on tablet */
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Infra image card */
+  .infra-image-card { grid-template-columns: 1fr; }
+  .infra-card-img { height: 180px; }
+
+  /* CIN chip word break */
+  .cin-chip { word-break: break-all; font-size: .72rem; padding: .5rem .8rem; }
+
+  /* About image card */
+  .about-card-img { height: 260px; }
+  .about-img-card { animation: none; }
+
+  /* Product card images */
+  .prod-card img { height: 160px !important; }
+
+  /* Product category titles */
+  .prod-cat-title { font-size: 1.2rem; }
+}
+
+@media(max-width:480px) {
+  section { padding: 2.5rem 1rem; }
+  footer { padding: 2.5rem 1rem 1.2rem; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
+
+  .hero-inner { padding: 0 1rem; gap: 2rem; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-sub { font-size: .92rem; }
+  .hero-card-img { height: 180px; }
+  .hero-card-content { padding: 1.2rem 1rem 1.5rem; }
+  .hero-card h3 { font-size: 1.2rem; }
+
+  /* Category grid: 1 col on small phone */
+  .cat-grid { grid-template-columns: 1fr; }
+
+  /* Products: 1 col */
+  .prod-grid { grid-template-columns: 1fr; }
+
+  /* Infra grid: 1 col */
+  .infra-grid { grid-template-columns: 1fr; }
+
+  /* Services: 1 col */
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-grid { gap: 2rem; }
+  .c-form { padding: 1.5rem 1rem; }
+
+  /* Footer */
+  .ft-top { gap: 2rem; }
+
+  /* Ad banner */
+  .ad-banner { padding: 1.5rem 1rem; }
+  .flagship-card { padding: 1.2rem 1rem; }
+  .flagship-card h3 { font-size: 1.1rem; }
+  .flagship-tags span { font-size: .68rem; padding: .2rem .5rem; }
+
+  /* Sec title */
+  .sec-title { font-size: 1.5rem; }
+
+  /* Buttons */
+  .btn-primary, .btn-outline { font-size: .88rem; padding: .7rem 1.5rem; }
 }
