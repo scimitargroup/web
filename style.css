@@ -392,6 +392,12 @@ section { padding:5rem 3rem; }
   outline:none; transition:border-color .3s, box-shadow .3s;
 }
 .fg input:focus, .fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,151,58,.15); }
+.fg .input-error { border-color:var(--ruby); box-shadow:0 0 0 3px rgba(143,26,26,.12); }
+.field-error {
+  color:var(--ruby); font-size:.74rem; margin-top:.35rem;
+  display:none;
+}
+.field-error.show { display:block; }
 .fg textarea { resize:vertical; min-height:100px; }
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 .sub-btn {
@@ -402,6 +408,7 @@ section { padding:5rem 3rem; }
   cursor:pointer; transition:all .3s;
 }
 .sub-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,151,58,.35); }
+.sub-btn.is-sending { opacity:.75; cursor:not-allowed; box-shadow:none; transform:none; }
 .toast {
   position:fixed; bottom:2rem; right:2rem;
   background:#fff; border:1px solid var(--success); border-radius:12px;

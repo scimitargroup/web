@@ -273,15 +273,33 @@
         </div>
         <div class="c-form fade-right delay-2">
           <div class="form-row">
-            <div class="fg"><label for="fName">Name</label><input id="fName" placeholder="Your Full Name"></div>
-            <div class="fg"><label for="fPhone">Phone</label><input id="fPhone" placeholder="+91 XXXXX XXXXX"></div>
+            <div class="fg">
+              <label for="fName">Name</label>
+              <input id="fName" name="name" placeholder="Your Full Name">
+              <div class="field-error" id="errName"></div>
+            </div>
+            <div class="fg">
+              <label for="fPhone">Phone</label>
+              <input id="fPhone" name="phone" placeholder="+91 XXXXX XXXXX">
+              <div class="field-error" id="errPhone"></div>
+            </div>
           </div>
-          <div class="fg"><label for="fEmail">Email</label><input id="fEmail" placeholder="your@email.com"></div>
-          <div class="fg"><label for="fSubject">Subject</label><input id="fSubject"
-              placeholder="Product Inquiry / Partnership / General"></div>
-          <div class="fg"><label for="fMsg">Message</label><textarea id="fMsg"
-              placeholder="Tell us about your requirements..."></textarea></div>
-          <button class="sub-btn" onclick="submitForm()">Send Message →</button>
+          <div class="fg">
+            <label for="fEmail">Email</label>
+            <input id="fEmail" name="email" placeholder="your@email.com">
+            <div class="field-error" id="errEmail"></div>
+          </div>
+          <div class="fg">
+            <label for="fSubject">Subject</label>
+            <input id="fSubject" name="subject" placeholder="Product Inquiry / Partnership / General">
+            <div class="field-error" id="errSubject"></div>
+          </div>
+          <div class="fg">
+            <label for="fMsg">Message</label>
+            <textarea id="fMsg" name="message" placeholder="Tell us about your requirements..."></textarea>
+            <div class="field-error" id="errMsg"></div>
+          </div>
+          <button class="sub-btn" id="submitBtn" onclick="submitForm()">Send Message →</button>
         </div>
       </div>
     </div>
@@ -325,7 +343,10 @@
   <!-- ═══════ BACK TO TOP ═══════ -->
   <button class="btt" id="bttBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    emailjs.init('KGo2-oddDOfz9E2YU');
+
     /* ─── Navigation ─── */
     const NAV_LINKS = ['home', 'products', 'about', 'infrastructure', 'directors', 'contact'];
     function goTo(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobMenu').classList.remove('open'); }
@@ -465,11 +486,85 @@
     act(); // run immediately after DOM creation loops
 
     /* ─── Contact form ─── */
-    function submitForm() {
-      ['fName', 'fPhone', 'fEmail', 'fSubject', 'fMsg'].forEach(id => document.getElementById(id).value = '');
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 4000);
+    function setFieldError(inputId, errorId, message) {
+      const input = document.getElementById(inputId);
+      const error = document.getElementById(errorId);
+      const hasError = Boolean(message);
+
+      if (input) {
+        input.classList.toggle('input-error', hasError);
+      }
+      if (error) {
+        error.textContent = message || '';
+        error.classList.toggle('show', hasError);
+      }
+    }
+
+    async function submitForm() {
+      const name = document.getElementById('fName').value.trim();
+      const phone = document.getElementById('fPhone').value.trim();
+      const email = document.getElementById('fEmail').value.trim();
+      const subject = document.getElementById('fSubject').value.trim();
+      const message = document.getElementById('fMsg').value.trim();
+
+      setFieldError('fName', 'errName', name ? '' : 'Name is required.');
+      setFieldError('fEmail', 'errEmail', email ? '' : 'Email is required.');
+      setFieldError('fMsg', 'errMsg', message ? '' : 'Message is required.');
+
+      const emailOk = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (email && !emailOk) {
+        setFieldError('fEmail', 'errEmail', 'Enter a valid email address.');
+      }
+
+      const hasErrors = !name || !email || !message || !emailOk;
+      if (hasErrors) {
+        return;
+      }
+
+      const btn = document.getElementById('submitBtn');
+      const defaultText = btn.dataset.defaultText || btn.textContent;
+      btn.dataset.defaultText = defaultText;
+      btn.textContent = 'Sending...';
+      btn.classList.add('is-sending');
+      btn.disabled = true;
+
+      try {
+        await emailjs.send('service_nhhiwfn', 'template_2ompb74', {
+          name,
+          phone,
+          email,
+          subject,
+          message
+        });
+
+        ['fName', 'fPhone', 'fEmail', 'fSubject', 'fMsg'].forEach(id => {
+          document.getElementById(id).value = '';
+        });
+        ['errName', 'errPhone', 'errEmail', 'errSubject', 'errMsg'].forEach(id => {
+          const errEl = document.getElementById(id);
+          if (errEl) {
+            errEl.textContent = '';
+            errEl.classList.remove('show');
+          }
+        });
+        ['fName', 'fPhone', 'fEmail', 'fSubject', 'fMsg'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.classList.remove('input-error');
+          }
+        });
+
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+      } catch (err) {
+        alert('Message failed to send. Please try again.');
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.classList.remove('is-sending');
+        btn.textContent = btn.dataset.defaultText || 'Send Message →';
+      }
     }
   </script>
 
