@@ -336,7 +336,7 @@
       </div>
     </div>
     <div class="ft-bot">
-      <p>© 2025 Scimitar Infrachemicals Private Limited. All Rights Reserved.</p>
+      <p>© 2025–<span id="copy-year"></span> Scimitar Infrachemicals Private Limited. All Rights Reserved.</p>
       <p class="ft-cin">CIN: U20229TS2025PTC202091</p>
     </div>
   </footer>
@@ -347,6 +347,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     emailjs.init('KGo2-oddDOfz9E2YU');
+
+    // Auto-update copyright year
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
 
     /* ─── Navigation ─── */
     const NAV_LINKS = ['home', 'products', 'about', 'infrastructure', 'reviews', 'contact'];
