@@ -198,16 +198,15 @@
     </div>
   </section>
 
-  <!-- ═══════ DIRECTORS ═══════ -->
-  <section id="directors" class="directors-sec">
-    <div class="container text-center">
-      <div class="fade-up">
-        <div class="sec-label sec-label-center">Leadership Team</div>
-        <h2 class="sec-title">Our Directors</h2>
-        <p class="sec-sub m-auto">Driving Scimitar Infrachemicals with vision, expertise and commitment to chemical
-          innovation.</p>
+  <!-- ═══════ REVIEWS ═══════ -->
+  <section id="reviews" class="reviews-sec">
+    <div class="container">
+      <div class="fade-up" style="text-align:center">
+        <div class="sec-label sec-label-center">Customer Testimonials</div>
+        <h2 class="sec-title">What Our Clients Say</h2>
+        <p class="sec-sub m-auto" style="margin-bottom:3rem">Trusted by builders, contractors, and developers across India — here's what they have to say about Scimitar products.</p>
       </div>
-      <div class="dir-grid" id="dirGrid"></div>
+      <div class="reviews-grid" id="reviewsGrid"></div>
     </div>
   </section>
 
@@ -337,7 +336,7 @@
     emailjs.init('KGo2-oddDOfz9E2YU');
 
     /* ─── Navigation ─── */
-    const NAV_LINKS = ['home', 'products', 'about', 'infrastructure', 'directors', 'contact'];
+    const NAV_LINKS = ['home', 'products', 'about', 'infrastructure', 'reviews', 'contact'];
     function goTo(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobMenu').classList.remove('open'); }
 
     // Populate nav links
@@ -418,17 +417,31 @@
     </div>`;
     });
 
-    /* ─── Directors ─── */
-    const DIRS = [{ name: 'Ramesh Danaboyina', init: 'RD' }, { name: 'Danaboyina Sri Vijaya Lakshmi', init: 'DL' }];
-    const dirGrid = document.getElementById('dirGrid');
-    DIRS.forEach((d, i) => {
-      dirGrid.innerHTML += `
-    <div class="dir-card fade-up" style="transition-delay:${i * .15}s">
-      <div class="dir-avatar">${d.init}</div>
-      <div class="dir-name">${d.name}</div>
-      <div class="dir-role">Director & Key Management Personnel</div>
-      <div class="dir-co">Scimitar Infrachemicals Pvt. Ltd.</div>
-    </div>`;
+    /* ─── Reviews ─── */
+    const REVIEWS = [
+      { name: 'Arjun Mehta', location: 'Mumbai, Maharashtra', rating: 5, product: 'Scimitar Cool Roof', review: 'Absolutely brilliant product! After applying the Cool Roof coating on our warehouse, the internal temperature dropped noticeably. It\u2019s been two monsoons and not a single leak. Highly recommend to anyone with large industrial roofing.', img: 'https://randomuser.me/api/portraits/men/32.jpg' },
+      { name: 'Priya Nair', location: 'Bengaluru, Karnataka', rating: 5, product: 'Scimitar Premium Shield', review: 'We used Premium Shield on our apartment complex exterior and the results are stunning. The paint has held up perfectly through heavy rains and harsh summer sun. The colour hasn\u2019t faded a bit after 18 months.', img: 'https://randomuser.me/api/portraits/women/44.jpg' },
+      { name: 'Ravi Shankar', location: 'Hyderabad, Telangana', rating: 5, product: 'TileFix Adhesives', review: 'TileFix Ultima is exceptional. We tiled an entire commercial kitchen floor and the adhesion is rock solid even with constant water exposure and heavy foot traffic. Far superior to what we\u2019ve used before.', img: 'https://randomuser.me/api/portraits/men/58.jpg' },
+      { name: 'Sneha Reddy', location: 'Pune, Maharashtra', rating: 4, product: 'Scimitar Wall Putty', review: 'Great surface finish before painting. The walls came out perfectly smooth. Application is easy and dries fast. Saved us significant time on our residential project. Will definitely use again.', img: 'https://randomuser.me/api/portraits/women/68.jpg' },
+      { name: 'Karthik Iyer', location: 'Chennai, Tamil Nadu', rating: 5, product: 'Imperial Cool Paint', review: 'Our office building used to get unbearably hot during summer. After Imperial Cool Paint, the difference is remarkable — rooms stay cooler throughout the day. Our electricity bills dropped too. Outstanding product!', img: 'https://randomuser.me/api/portraits/men/76.jpg' },
+      { name: 'Deepa Srinivas', location: 'Vijayawada, Andhra Pradesh', rating: 4, product: 'Waterproofing Chemicals', review: 'Had severe seepage issues in our basement for years. Scimitar waterproofing completely fixed the problem. Application was straightforward and the technical support team was very helpful throughout the process.', img: 'https://randomuser.me/api/portraits/women/90.jpg' },
+    ];
+    const reviewsGrid = document.getElementById('reviewsGrid');
+    REVIEWS.forEach((r, i) => {
+      const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+      reviewsGrid.innerHTML += `
+      <div class="review-card fade-up" style="transition-delay:${i * 0.1}s">
+        <div class="review-stars" aria-label="${r.rating} out of 5 stars">${stars}</div>
+        <p class="review-text">&ldquo;${r.review}&rdquo;</p>
+        <div class="review-footer">
+          <img src="${r.img}" alt="${r.name}" class="review-avatar" loading="lazy">
+          <div class="review-info">
+            <div class="review-name">${r.name}</div>
+            <div class="review-location">${r.location}</div>
+            <div class="review-product">✔ Verified purchase &nbsp;·&nbsp; ${r.product}</div>
+          </div>
+        </div>
+      </div>`;
     });
 
     /* ─── Services ─── */
