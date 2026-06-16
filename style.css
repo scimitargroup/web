@@ -147,7 +147,7 @@ body { font-family: var(--font-body); background: transparent; color: var(--text
   100% { transform: translateY(0px); }
 }
 
-.hero-card-wrap { position:relative; z-index:2; animation: float 6s ease-in-out infinite; }
+.hero-card-wrap { position:relative; z-index:2; }
 .hero-card {
   background:#fff; border-radius:24px; overflow:hidden;
   border:1px solid var(--border); box-shadow:var(--shadow-lg);
