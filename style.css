@@ -153,7 +153,7 @@ body { font-family: var(--font-body); background: transparent; color: var(--text
   border:1px solid var(--border); box-shadow:var(--shadow-lg);
 }
 .hero-card-img {
-  width:100%; height:350px; object-fit:cover; display:block;
+  width:100%; height:auto; display:block;
 }
 .hero-card-content {
   padding:1.8rem 1.6rem 2rem;
@@ -271,7 +271,7 @@ section { padding:5rem 3rem; }
   animation: float-reverse 7s ease-in-out infinite;
 }
 .about-card-img {
-  width:100%; height:400px; object-fit:cover; display:block;
+  width:100%; height:auto; display:block;
 }
 .about-card-copy {
   padding:1.5rem 1.6rem 2rem;
@@ -574,7 +574,7 @@ img {
   .hero-text { text-align:center; }
   .hero-sub { margin:0 auto 2rem; }
   .hero-btns { justify-content:center; }
-  .hero-card-img { height: 220px; }
+  .hero-card-img { height: auto; }
   .hero-card-wrap { animation: none; }
 
   .about-grid, .services-grid, .contact-grid { grid-template-columns:1fr; }
@@ -607,7 +607,7 @@ img {
   .cin-chip { word-break: break-all; font-size: .72rem; padding: .5rem .8rem; }
 
   /* About image card */
-  .about-card-img { height: 260px; }
+  .about-card-img { height: auto; }
   .about-img-card { animation: none; }
 
   /* Product card images */
@@ -625,7 +625,7 @@ img {
   .hero-inner { padding: 0 1rem; gap: 2rem; }
   .hero-title { font-size: 1.8rem; }
   .hero-sub { font-size: .92rem; }
-  .hero-card-img { height: 180px; }
+  .hero-card-img { height: auto; }
   .hero-card-content { padding: 1.2rem 1rem 1.5rem; }
   .hero-card h3 { font-size: 1.2rem; }
 
