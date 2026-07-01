@@ -33,37 +33,38 @@
 
   <!-- ═══════ NAVBAR ═══════ -->
   <nav class="nav" id="navbar">
-    <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-      <div class="nav-logo-icon">
-        <img src="original logo.png?v=2" alt="Scimitar Infra Logo" class="nav-logo-img">
+    <div id="scrollProgress" class="scroll-progress"></div>
+    <div class="nav-container">
+      <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <div class="nav-logo-icon">
+          <img src="original logo.png?v=2" alt="Scimitar Infra Logo" class="nav-logo-img">
+        </div>
+        <div class="nav-brand"><span>SCIMITAR</span> INFRA</div>
       </div>
-      <div class="nav-brand"><span>SCIMITAR</span> INFRA</div>
+      <ul class="nav-links" id="navLinks"></ul>
+      <div class="nav-actions">
+        <a class="nav-icon-link nav-icon-mail" href="#contact" onclick="goTo('contact'); return false;" title="Email Us" aria-label="Contact via Email">
+          <img src="https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000" alt="Email Us" width="20" height="20">
+        </a>
+        <a class="nav-icon-link nav-icon-wa" href="https://wa.me/919391369697?text=Hello%2C%20I%20am%20interested%20in%20your%20chemical%20products%20and%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+            <path fill="#fff" d="M4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5c5.1,0,9.8,2,13.4,5.6	C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19c0,0,0,0,0,0h0c-3.2,0-6.3-0.8-9.1-2.3L4.9,43.3z"></path><path fill="#fff" d="M4.9,43.8c-0.1,0-0.3-0.1-0.4-0.1c-0.1-0.1-0.2-0.3-0.1-0.5L7,33.5c-1.6-2.9-2.5-6.2-2.5-9.6	C4.5,13.2,13.3,4.5,24,4.5c5.2,0,10.1,2,13.8,5.7c3.7,3.7,5.7,8.6,5.7,13.8c0,10.7-8.7,19.5-19.5,19.5c-3.2,0-6.3-0.8-9.1-2.3	L5,43.8C5,43.8,4.9,43.8,4.9,43.8z"></path><path fill="#cfd8dc" d="M24,5c5.1,0,9.8,2,13.4,5.6C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19h0c-3.2,0-6.3-0.8-9.1-2.3	L4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5 M24,43L24,43L24,43 M24,43L24,43L24,43 M24,4L24,4C13,4,4,13,4,24	c0,3.4,0.8,6.7,2.5,9.6L3.9,43c-0.1,0.3,0,0.7,0.3,1c0.2,0.2,0.4,0.3,0.7,0.3c0.1,0,0.2,0,0.3,0l9.7-2.5c2.8,1.5,6,2.2,9.2,2.2	c11,0,20-9,20-20c0-5.3-2.1-10.4-5.8-14.1C34.4,6.1,29.4,4,24,4L24,4z"></path><path fill="#40c351" d="M35.2,12.8c-3-3-6.9-4.6-11.2-4.6C15.3,8.2,8.2,15.3,8.2,24c0,3,0.8,5.9,2.4,8.4L11,33l-1.6,5.8	l6-1.6l0.6,0.3c2.4,1.4,5.2,2.2,8,2.2h0c8.7,0,15.8-7.1,15.8-15.8C39.8,19.8,38.2,15.8,35.2,12.8z"></path><path fill="#fff" fill-rule="evenodd" d="M19.3,16c-0.4-0.8-0.7-0.8-1.1-0.8c-0.3,0-0.6,0-0.9,0	s-0.8,0.1-1.3,0.6c-0.4,0.5-1.7,1.6-1.7,4s1.7,4.6,1.9,4.9s3.3,5.3,8.1,7.2c4,1.6,4.8,1.3,5.7,1.2c0.9-0.1,2.8-1.1,3.2-2.3	c0.4-1.1,0.4-2.1,0.3-2.3c-0.1-0.2-0.4-0.3-0.9-0.6s-2.8-1.4-3.2-1.5c-0.4-0.2-0.8-0.2-1.1,0.2c-0.3,0.5-1.2,1.5-1.5,1.9	c-0.3,0.3-0.6,0.4-1,0.1c-0.5-0.2-2-0.7-3.8-2.4c-1.4-1.3-2.4-2.8-2.6-3.3c-0.3-0.5,0-0.7,0.2-1c0.2-0.2,0.5-0.6,0.7-0.8	c0.2-0.3,0.3-0.5,0.5-0.8c0.2-0.3,0.1-0.6,0-0.8C20.6,19.3,19.7,17,19.3,16z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+        <button class="nav-cta" onclick="goTo('contact')">Get in Touch</button>
+      </div>
+      <button class="hamburger" id="hamburgerBtn"
+        aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
     </div>
-    <ul class="nav-links" id="navLinks"></ul>
-    <div class="nav-actions">
-      <a class="nav-icon-link nav-icon-mail" href="#contact" onclick="goTo('contact'); return false;" title="Email Us" aria-label="Contact via Email">
-        <img src="https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000" alt="Email Us" width="20" height="20">
-      </a>
-      <a class="nav-icon-link nav-icon-wa" href="https://wa.me/919391369697?text=Hello%2C%20I%20am%20interested%20in%20your%20chemical%20products%20and%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
-          <path fill="#fff" d="M4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5c5.1,0,9.8,2,13.4,5.6	C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19c0,0,0,0,0,0h0c-3.2,0-6.3-0.8-9.1-2.3L4.9,43.3z"></path><path fill="#fff" d="M4.9,43.8c-0.1,0-0.3-0.1-0.4-0.1c-0.1-0.1-0.2-0.3-0.1-0.5L7,33.5c-1.6-2.9-2.5-6.2-2.5-9.6	C4.5,13.2,13.3,4.5,24,4.5c5.2,0,10.1,2,13.8,5.7c3.7,3.7,5.7,8.6,5.7,13.8c0,10.7-8.7,19.5-19.5,19.5c-3.2,0-6.3-0.8-9.1-2.3	L5,43.8C5,43.8,4.9,43.8,4.9,43.8z"></path><path fill="#cfd8dc" d="M24,5c5.1,0,9.8,2,13.4,5.6C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19h0c-3.2,0-6.3-0.8-9.1-2.3	L4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5 M24,43L24,43L24,43 M24,43L24,43L24,43 M24,4L24,4C13,4,4,13,4,24	c0,3.4,0.8,6.7,2.5,9.6L3.9,43c-0.1,0.3,0,0.7,0.3,1c0.2,0.2,0.4,0.3,0.7,0.3c0.1,0,0.2,0,0.3,0l9.7-2.5c2.8,1.5,6,2.2,9.2,2.2	c11,0,20-9,20-20c0-5.3-2.1-10.4-5.8-14.1C34.4,6.1,29.4,4,24,4L24,4z"></path><path fill="#40c351" d="M35.2,12.8c-3-3-6.9-4.6-11.2-4.6C15.3,8.2,8.2,15.3,8.2,24c0,3,0.8,5.9,2.4,8.4L11,33l-1.6,5.8	l6-1.6l0.6,0.3c2.4,1.4,5.2,2.2,8,2.2h0c8.7,0,15.8-7.1,15.8-15.8C39.8,19.8,38.2,15.8,35.2,12.8z"></path><path fill="#fff" fill-rule="evenodd" d="M19.3,16c-0.4-0.8-0.7-0.8-1.1-0.8c-0.3,0-0.6,0-0.9,0	s-0.8,0.1-1.3,0.6c-0.4,0.5-1.7,1.6-1.7,4s1.7,4.6,1.9,4.9s3.3,5.3,8.1,7.2c4,1.6,4.8,1.3,5.7,1.2c0.9-0.1,2.8-1.1,3.2-2.3	c0.4-1.1,0.4-2.1,0.3-2.3c-0.1-0.2-0.4-0.3-0.9-0.6s-2.8-1.4-3.2-1.5c-0.4-0.2-0.8-0.2-1.1,0.2c-0.3,0.5-1.2,1.5-1.5,1.9	c-0.3,0.3-0.6,0.4-1,0.1c-0.5-0.2-2-0.7-3.8-2.4c-1.4-1.3-2.4-2.8-2.6-3.3c-0.3-0.5,0-0.7,0.2-1c0.2-0.2,0.5-0.6,0.7-0.8	c0.2-0.3,0.3-0.5,0.5-0.8c0.2-0.3,0.1-0.6,0-0.8C20.6,19.3,19.7,17,19.3,16z" clip-rule="evenodd"></path>
-        </svg>
-      </a>
-      <button class="nav-cta" onclick="goTo('contact')">Get in Touch</button>
-    </div>
-    <button class="hamburger" id="hamburgerBtn"
-      aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mob-menu" id="mobMenu"></div>
 
   <section id="home" class="hero">
-
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="hero-badge">
-          <div class="hero-badge-dot"></div>Est. August 2025 · Hyderabad, India
-        </div>
-        <h1 class="hero-title"><span class="highlight">Pioneering Chemical Solutions for Modern Infrastructure</span>
+        <h1 class="hero-title">
+          Pioneering Chemical Solutions
+          <span class="hero-typewriter" id="heroTypewriter"></span>
         </h1>
         <p class="hero-sub">Manufacturers of advanced caulking compounds, composite solvents, mastics, and surface
           preparation solutions powering India's infrastructure growth.</p>
@@ -71,14 +72,25 @@
           <button class="btn-primary" onclick="goTo('products')">Explore Products</button>
           <button class="btn-outline" onclick="goTo('about')">About Company</button>
         </div>
+        <div class="hero-trust-bar">
+          <div class="hero-trust-item">✔ Quality Assured</div>
+          <div class="hero-trust-item">✔ MCA Registered</div>
+          <div class="hero-trust-item">✔ Hyderabad Based</div>
+          <div class="hero-trust-item">✔ B2B Ready</div>
+        </div>
       </div>
-      <div class="hero-card-wrap" style="animation: float-reverse 7s ease-in-out infinite;">
-        <div class="hero-card">
-          <img src="./images/Hero card.jpeg" alt="Industrial buckets" class="hero-card-img" loading="lazy">
+      <div class="hero-card-wrap">
+        <div class="hero-card-float">
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <img src="./images/Hero card.png" alt="Industrial chemical products" class="hero-card-img" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- ═══════ ABOUT ═══════ -->
   <section id="about">
@@ -347,7 +359,6 @@
     </div>
     <div class="ft-bot">
       <p>© 2025–<span id="copy-year"></span> Scimitar Infrachemicals Private Limited. All Rights Reserved.</p>
-      <p class="ft-cin">CIN: U20229TS2025PTC202091</p>
     </div>
   </footer>
 
@@ -361,8 +372,53 @@
     // Auto-update copyright year
     document.getElementById('copy-year').textContent = new Date().getFullYear();
 
+    /* ─── Hero Typewriter ─── */
+    (function () {
+      const phrases = ['with Cool Roof Coatings', 'with Premium Wall Paints', 'with Waterproofing Solutions', 'with TileFix Adhesives', 'with High-Performance Primers'];
+      const el = document.getElementById('heroTypewriter');
+      if (!el) return;
+
+      let phraseIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      let timer = null;
+
+      function type() {
+        const current = phrases[phraseIdx];
+
+        if (!isDeleting) {
+          // Typing forward
+          charIdx++;
+          el.textContent = current.slice(0, charIdx);
+
+          if (charIdx === current.length) {
+            // Finished typing — pause before deleting
+            isDeleting = true;
+            timer = setTimeout(type, 1800);
+            return;
+          }
+          timer = setTimeout(type, 70);
+        } else {
+          // Deleting
+          charIdx--;
+          el.textContent = current.slice(0, charIdx);
+
+          if (charIdx === 0) {
+            // Finished deleting — move to next phrase
+            isDeleting = false;
+            phraseIdx = (phraseIdx + 1) % phrases.length;
+            timer = setTimeout(type, 400);
+            return;
+          }
+          timer = setTimeout(type, 40);
+        }
+      }
+
+      timer = setTimeout(type, 600);
+    })();
+
     /* ─── Navigation ─── */
-    const NAV_LINKS = ['home', 'products', 'about', 'infrastructure', 'reviews', 'contact'];
+    const NAV_LINKS = ['home', 'about', 'products', 'infrastructure', 'reviews', 'contact'];
     function goTo(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobMenu').classList.remove('open'); }
 
     // Populate nav links
@@ -380,9 +436,15 @@
     });
 
     // Navbar scroll
+    const scrollProgress = document.getElementById('scrollProgress');
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
       document.getElementById('bttBtn').classList.toggle('vis', window.scrollY > 400);
+
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (scrollProgress) scrollProgress.style.width = scrolled + "%";
     });
 
     /* ─── Products ─── */
@@ -492,7 +554,7 @@
     NAV_LINKS.forEach(s => { ftNav.innerHTML += `<li><a onclick="goTo('${s}')">${s.charAt(0).toUpperCase() + s.slice(1)}</a></li>`; });
     const ftProd = document.getElementById('ftProd');
     ['Scimitar Smart Care', 'Scimitar Premium Shield', 'Scimitar Royal Fort', 'Scimitar Cool Care', 'Scimitar Imperial Cool', 'Scimitar Wall Putty', 'Scimitar Wall Primer'].forEach(p => {
-      ftProd.innerHTML += `<li><span>${p}</span></li>`;
+      ftProd.innerHTML += `<li><a style="cursor:pointer;" onclick="goTo('products')">${p}</a></li>`;
     });
     const ftInfo = document.getElementById('ftInfo');
     [['CIN', 'U20229TS2025PTC202091'], ['ROC', 'RoC-Hyderabad'], ['Status', 'Active'], ['Founded', 'Aug 7, 2025'], ['NIC Code', '20229'], ['State', 'Telangana']].forEach(([k, v]) => {
