@@ -1803,6 +1803,11 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
+  .hero {
+    padding-top: 130px;
+    padding-bottom: 80px;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1906,7 +1911,8 @@ img {
   }
 
   .hero {
-    padding-top: 70px;
+    padding-top: 120px;
+    padding-bottom: 60px;
   }
 
   /* Featured products container outside section */
